@@ -1,4 +1,4 @@
-// OpenLayers: OSM base, Ankara center (meets OL requirement)
+// OpenLayers: OSM base, Ankara center
 const map = new ol.Map({
   target: 'ol-map',
   layers: [ new ol.layer.Tile({ source: new ol.source.OSM() }) ],
