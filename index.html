@@ -3,90 +3,155 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Özgür Esin Güçlü | Anasayfa</title>
+  <title>Özgür Esin Güçlü — Kişisel Web Sayfası</title>
+
+  <!-- Fontlar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Stil -->
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- OpenLayers -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
-  <meta name="description" content="Özgür Esin Güçlü – Hacettepe Üniversitesi Geomatik Mühendisliği öğrencisi. GIS, haritacılık ve yazılım odaklı çalışmalar.">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html" aria-current="page">Ana Sayfa</a>
-    <a href="background.html">Geçmiş</a>
-    <a href="projects.html">Projeler</a>
-  </nav>
+
+<!-- Üst Menü -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <div class="brand">ÖZGÜR ESİN GÜÇLÜ</div>
+    <nav class="nav">
+      <a href="#about" aria-current="page">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <!-- HERO -->
-  <section class="hero fade-in">
-    <h1>Merhaba, ben <strong>Özgür Esin Güçlü</strong> 👋</h1>
-    <p>Hacettepe Üniversitesi <strong>Geomatik Mühendisliği</strong> son sınıf öğrencisiyim. 
-       CBS ve yazılım alanında kendimi geliştiriyor, gerçek dünyadaki problemlere mekânsal çözümler üretmeyi seviyorum. <!-- CV özeti -->
-    </p>
 
-    <div class="badges">
-      <span class="badge">GIS</span>
-      <span class="badge">Haritacılık</span>
-      <span class="badge">Python (Orta)</span>
-      <span class="badge">QGIS (Orta)</span>
-      <span class="badge">AutoCAD (Başlangıç)</span>
-      <span class="badge">Agisoft (Orta)</span>
-      <span class="badge">TR (Ana dil)</span>
-      <span class="badge">EN (B2)</span>
+  <!-- ABOUT (dergi kapağı stili, foto sağda) -->
+  <section id="about" class="about-hero">
+    <div class="about-inner">
+      <div class="about-text">
+        <h1 class="big-name">ÖZGÜR <span>ESİN</span> GÜÇLÜ</h1>
+        <h2 class="sub">Geomatik Mühendisliği Öğrencisi</h2>
+        <p class="bio">
+          Mekânsal veri, harita ve yazılımla ilgileniyorum. CBS, uzaktan algılama ve Python ile
+          gerçek dünyadaki problemler için görsel ve analitik çözümler üretmeyi seviyorum.
+        </p>
+        <div class="badges">
+          <span>GIS</span><span>Python</span><span>QGIS</span><span>AutoCAD</span><span>Survey</span>
+        </div>
+      </div>
+
+      <!-- Fotoğraf: assets/mezuniyet.jpg -->
+      <figure class="about-photo">
+        <img src="assets/mezuniyet.jpg" alt="Özgür Esin Güçlü">
+      </figure>
     </div>
   </section>
 
-  <!-- ÖNE ÇIKANLAR -->
-  <section class="cards">
-    <article class="card slide-up">
-      <h2>🚀 Hızlı Özgeçmiş</h2>
-      <ul>
-        <li><strong>YDA Group (Ankara), Stajyer</strong> — 01.07.2024–30.07.2024  
-            Total station, nivo, lazer ile arazi ölçmeleri; NetCad & AutoCAD ile haritalama ve analiz. <!-- CV -->
-        </li>
-        <li><strong>Hacettepe Ü., Geomatik Müh.</strong> — 2020–Güncel</li>
+  <!-- EDUCATION -->
+  <section id="education" class="section card">
+    <h2>Education</h2>
+    <ul class="list">
+      <li><strong>Hacettepe Üniversitesi — Geomatik Mühendisliği</strong> · 2020–Güncel</li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section card">
+    <h2>Experience</h2>
+    <ul class="list">
+      <li><strong>YDA Group (Ankara) — Stajyer</strong> · 07/2024  
+        Arazi ölçmeleri (total station, nivo, lazer); NetCad & AutoCAD ile haritalama/analiz.
+      </li>
+    </ul>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section cards-2">
+    <article class="card"><h3>Technical</h3>
+      <ul class="list">
+        <li>QGIS, NetCad, AutoCAD, Agisoft</li>
+        <li>Python (orta), Excel (ileri)</li>
       </ul>
     </article>
-
-    <article class="card slide-up">
-      <h2>🧰 Araçlar & Beceriler</h2>
-      <p>Python, QGIS, NetCad, AutoCAD, Agisoft, Excel; takım çalışması, problem çözme, zaman yönetimi.</p>
-    </article>
-
-    <article class="card slide-up">
-      <h2>🎓 Seminer & Sertifikalar</h2>
-      <ul>
-        <li>AutoCAD: Sıfırdan Uzmanlığa Eğitim Seti (06.03.2024)</li>
-        <li>Yapay Zekâ & Uzaktan Algılama ile Afet Risk Yönetimi (23.05.2023)</li>
-        <li>Gravimetrik Yer Gözlemleri için Yeni Kuantum Sensörleri (06.04.2023)</li>
-        <li>QGIS Bilgisayar Kursu (19.12.2022)</li>
-        <li>MS Excel: İleri Düzey (tarih: CV)</li>
+    <article class="card"><h3>Soft Skills</h3>
+      <ul class="list">
+        <li>Takım çalışması, problem çözme</li>
+        <li>Zaman yönetimi, iletişim</li>
       </ul>
     </article>
   </section>
 
-  <!-- HARİTA -->
-  <section id="map-section">
-    <h2>Haritam</h2>
-    <p class="muted">Varsayılan görünüm: Ankara. Tıklayınca koordinatları konsola yazar.</p>
-    <div id="map" class="map" role="region" aria-label="Etkileşimli harita"></div>
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section card">
+    <h2>Certificates & Seminars</h2>
+    <ul class="list">
+      <li>AutoCAD: Sıfırdan Uzmanlığa (2024)</li>
+      <li>Yapay Zekâ & Uzaktan Algılama ile Afet Risk Yönetimi (2023)</li>
+      <li>Gravimetrik Yer Gözlemleri için Yeni Kuantum Sensörleri (2023)</li>
+      <li>QGIS Bilgisayar Kursu (2022)</li>
+    </ul>
   </section>
 
-  <!-- İLETİŞİM -->
-  <section class="card slide-up">
-    <h2>📬 İletişim</h2>
-    <p>
-      E-posta: <em>(buraya kendi e-postanı yaz)</em> · 
-      LinkedIn: <em>(profil bağlantını ekle)</em>
-    </p>
-    <p>
-      <a class="btn" href="ÖzgürEsinGÜÇLÜ_CV.pdf" download>CV’yi indir (PDF)</a>
-    </p>
+  <!-- PROJECTS + MAP (tablolu bilgi + görselli + OL şartı) -->
+  <section id="projects" class="section card">
+    <h2>Projects</h2>
+    <table class="proj-table">
+      <thead><tr><th>Görsel</th><th>Proje</th><th>Açıklama</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Map_marker.svg" alt="Map pin"></td>
+          <td>Mahalle Haritası</td>
+          <td>OpenLayers ile temel zemin + vektör katmanları.</td>
+        </tr>
+        <tr>
+          <td><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Map_icon.svg" alt="Map icon"></td>
+          <td>Rota Planlayıcı</td>
+          <td>Marker & popup ile etkileşimli rota örneği.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="map-wrap">
+      <h3>Interactive Map</h3>
+      <div id="map" class="map" role="region" aria-label="Etkileşimli harita"></div>
+    </div>
   </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section card">
+    <h2>Contact</h2>
+    <p>E-posta: <em>kendiniekle@ornek.com</em> · LinkedIn: <em>profil linkin</em></p>
+    <p><a class="btn" href="OzgurEsinGuclu_CV.pdf" download>CV’yi indir (PDF)</a></p>
+  </section>
+
 </main>
 
+<footer class="site-footer">
+  <small>© Özgür Esin Güçlü — 2025</small>
+</footer>
+
+<!-- OpenLayers -->
 <script src="https://cdn.jsdelivr.net/npm/ol/ol.js"></script>
 <script src="js/map.js"></script>
+
+<!-- Yumuşak kaydırma -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
 </body>
 </html>
