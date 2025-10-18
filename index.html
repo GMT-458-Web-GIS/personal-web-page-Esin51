@@ -12,14 +12,14 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- OpenLayers -->
+  <!-- OpenLayers CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
 </head>
 <body>
 
+<!-- Top Nav (brand removed) -->
 <header class="site-header">
   <div class="nav-wrap">
-    <div class="brand">ÖZGÜR ESİN GÜÇLÜ</div>
     <nav class="nav">
       <a href="#about" aria-current="page">About</a>
       <a href="#education">Education</a>
@@ -34,7 +34,7 @@
 
 <main>
 
-  <!-- ABOUT (magazine cover style + orbiting satellite) -->
+  <!-- ABOUT (magazine style) -->
   <section id="about" class="about-hero">
     <div class="about-inner">
       <div class="about-text">
@@ -52,16 +52,6 @@
       <figure class="about-photo">
         <img src="assets/mezuniyet.jpg" alt="Özgür Esin Güçlü graduation photo">
       </figure>
-    </div>
-
-    <!-- Orbiting satellite decoration -->
-    <div class="orbit">
-      <div class="satellite"></div>
-      <span class="sparkle s1"></span>
-      <span class="sparkle s2"></span>
-      <span class="sparkle s3"></span>
-      <span class="sparkle s4"></span>
-      <span class="sparkle s5"></span>
     </div>
   </section>
 
@@ -121,6 +111,7 @@
   <section id="map" class="section card">
     <h2>Interactive Map</h2>
     <p class="muted">Default view: Ankara. Click on the map to see coordinates in the console.</p>
+    <!-- id="ol-map" MUST match JS target -->
     <div id="ol-map" class="map" role="region" aria-label="Interactive map"></div>
     <p class="muted small">
       OL example ref: <a href="https://banbar.github.io/my-first-wp/" target="_blank" rel="noopener">sample</a>.
@@ -144,7 +135,18 @@
   <small>© Özgür Esin Güçlü — 2025</small>
 </footer>
 
-<!-- OpenLayers -->
+<!-- FLYING SATELLITE (your image) -->
+<div class="fly-sat">
+  <img src="assets/satellite.png" alt="">
+  <!-- sparkle trail -->
+  <span class="trail t1"></span>
+  <span class="trail t2"></span>
+  <span class="trail t3"></span>
+  <span class="trail t4"></span>
+  <span class="trail t5"></span>
+</div>
+
+<!-- OpenLayers JS -->
 <script src="https://cdn.jsdelivr.net/npm/ol/ol.js"></script>
 <script src="js/map.js"></script>
 
