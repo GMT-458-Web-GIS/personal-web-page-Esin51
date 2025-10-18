@@ -37,6 +37,15 @@
   .brand{color:#fff; font-weight:800; letter-spacing:.2px}
   .brand span{color:var(--accent)}
   .menu{position:relative}
+
+  /* Brand yazısını tamamen kaldır (görünmesin) */
+.brand{ display:none; }
+
+/* Hamburger menüyü tam sağa yasla */
+.menu{ margin-left:auto; }           /* geri kalan boşluğu ittir */
+.nav-wrap{ padding-right: 12px; }    /* sağ kenara yaklaşsın */
+.burger{ margin-right: 0; }          /* ekstra boşluk olmasın */
+
   
   /* burger */
   .burger{
@@ -225,3 +234,15 @@
     .trail{animation:none; opacity:0}
   }
   
+  /* ==== HEADER OVERRIDES ==== */
+/* brand tamamen yoksa bile güvene alalım */
+.brand{ display:none !important; }
+
+/* hamburgeri tam sağa yasla */
+.nav-wrap{
+  justify-content:flex-end !important;   /* her şeyi sağa iter */
+  padding-right: 8px !important;         /* kenara yaklaş */
+}
+.menu{ margin-left:0 !important; }
+.burger{ margin-right:0 !important; }
+.menu-panel{ right:0 !important; }       /* panel sağdan açılsın */

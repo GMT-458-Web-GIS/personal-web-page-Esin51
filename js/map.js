@@ -1,14 +1,16 @@
-// Hacettepe Geomatics (Harita) Mühendisliği — bina odağı + tıklamayla taşınabilir pin
+// Hacettepe Geomatics (Harita) Mühendisliği — kesin koordinat + tıklamayla pin taşı
 (function initOL(){
-  if (!window.ol) return setTimeout(initOL, 150);
+  if (!window.ol) return setTimeout(initOL, 120);
+
   const mapDiv = document.getElementById('ol-map');
   if (!mapDiv) return;
 
-  // Yaklaşık koordinat (binaya yakın)
-  const deptLonLat = [32.7469, 39.8709]; // [lon, lat]
-  const deptCenter = ol.proj.fromLonLat(deptLonLat);
+  // >>> DOĞRU KOORDİNAT (lat: 39.86581451233189, lon: 32.73393670185093)
+  // OpenLayers lon,lat ister:
+  const deptLonLat = [32.73393670185093, 39.86581451233189];
 
-  // Pin + etiket
+  const center = ol.proj.fromLonLat(deptLonLat);
+
   const pinStyle = new ol.style.Style({
     image: new ol.style.Circle({
       radius: 8,
@@ -24,10 +26,7 @@
     })
   });
 
-  const marker = new ol.Feature({
-    geometry: new ol.geom.Point(deptCenter),
-    name: 'Hacettepe – Geomatics Eng. Dept.'
-  });
+  const marker = new ol.Feature({ geometry: new ol.geom.Point(center) });
   marker.setStyle(pinStyle);
 
   const vectorLayer = new ol.layer.Vector({
@@ -41,15 +40,17 @@
       vectorLayer
     ],
     view: new ol.View({
-      center: deptCenter,
-      zoom: 17
+      center, zoom: 18    // yakınlaştırmayı bir tık arttırdım
     })
   });
 
-  // Tek tıkla pini taşı → istediğin pik noktayı yakalayabilirsin
+  // Tek tıkla pini taşı (kontrol amaçlı konsola yaz)
   map.on('singleclick', (evt) => {
     marker.getGeometry().setCoordinates(evt.coordinate);
     const [lon, lat] = ol.proj.toLonLat(evt.coordinate);
-    console.log(`Marker moved to Lon: ${lon.toFixed(6)}  Lat: ${lat.toFixed(6)}`);
+    console.log(`Marker @ Lon ${lon.toFixed(8)}  Lat ${lat.toFixed(8)}`);
   });
+
+  // Koordinatın gerçekten geldiğini konsolda görelim:
+  console.log('Map centered @', deptLonLat);
 })();
