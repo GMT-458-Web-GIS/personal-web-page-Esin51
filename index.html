@@ -5,35 +5,55 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Özgür Esin Güçlü — Personal Website</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- OpenLayers CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
 </head>
 <body>
 
+<!-- ===== HEADER (hamburger + sparkle dropdown) ===== -->
 <header class="site-header">
   <div class="nav-wrap">
-    <nav class="nav">
-      <a href="#about" aria-current="page">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#languages">Languages</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#computerskills">Computer</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#hobbies">Hobbies</a>
-      <a href="#map">Map</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="brand">ÖZGÜR <span>ESİN</span> GÜÇLÜ</div>
+
+    <div class="menu" id="menu">
+      <button class="burger" aria-label="Open navigation" aria-haspopup="true" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="menu-panel" role="menu" aria-label="Site sections">
+        <a href="#about"        role="menuitem">About</a>
+        <a href="#education"    role="menuitem">Education</a>
+        <a href="#experience"   role="menuitem">Experience</a>
+        <a href="#skills"       role="menuitem">Skills</a>
+        <a href="#languages"    role="menuitem">Languages</a>
+        <a href="#highlights"   role="menuitem">Highlights</a>
+        <a href="#computerskills" role="menuitem">Computer</a>
+        <a href="#certificates" role="menuitem">Certificates</a>
+        <a href="#hobbies"      role="menuitem">Hobbies</a>
+        <a href="#map"          role="menuitem">Map</a>
+        <a href="#contact"      role="menuitem">Contact</a>
+
+        <!-- sparkle particles (panel açılırken parıltılar) -->
+        <div class="sparkles" aria-hidden="true">
+          <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
+          <span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span>
+          <span class="spark s7"></span><span class="spark s8"></span><span class="spark s9"></span>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- ABOUT -->
+  <!-- ===== ABOUT ===== -->
   <section id="about" class="about-hero">
     <div class="about-inner">
       <div class="about-text">
@@ -56,7 +76,7 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- ===== EDUCATION ===== -->
   <section id="education" class="section card">
     <h2>Education</h2>
     <ul class="list">
@@ -64,7 +84,7 @@
     </ul>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- ===== EXPERIENCE ===== -->
   <section id="experience" class="section card">
     <h2>Experience</h2>
     <ul class="list">
@@ -79,7 +99,7 @@
     </ul>
   </section>
 
-  <!-- SKILLS (only Technical; vertical list) -->
+  <!-- ===== SKILLS (vertical) ===== -->
   <section id="skills" class="section">
     <article class="card">
       <h3>Technical Skills</h3>
@@ -94,7 +114,7 @@
     </article>
   </section>
 
-  <!-- LANGUAGES -->
+  <!-- ===== LANGUAGES ===== -->
   <section id="languages" class="section card">
     <h2>Languages</h2>
     <ul class="list">
@@ -103,7 +123,7 @@
     </ul>
   </section>
 
-  <!-- HIGHLIGHTS -->
+  <!-- ===== HIGHLIGHTS ===== -->
   <section id="highlights" class="section card">
     <h2>Skill Highlights</h2>
     <ul class="list">
@@ -116,7 +136,7 @@
     </ul>
   </section>
 
-  <!-- COMPUTER SKILLS -->
+  <!-- ===== COMPUTER SKILLS ===== -->
   <section id="computerskills" class="section card">
     <h2>Computer Skills</h2>
     <ul class="list">
@@ -133,7 +153,7 @@
     </ul>
   </section>
 
-  <!-- CERTIFICATES -->
+  <!-- ===== CERTIFICATES ===== -->
   <section id="certificates" class="section card">
     <h2>Seminars & Certificates</h2>
     <ul class="list">
@@ -145,21 +165,21 @@
     </ul>
   </section>
 
-  <!-- HOBBIES -->
+  <!-- ===== HOBBIES ===== -->
   <section id="hobbies" class="section card">
     <h2>Hobbies</h2>
     <p>Equestrian, painting, astrology and swimming.</p>
   </section>
 
-  <!-- MAP -->
+  <!-- ===== MAP ===== -->
   <section id="map" class="section card">
     <h2>Interactive Map</h2>
-    <p class="muted">Default view: Hacettepe University, Beytepe Campus. Click to see coordinates in console.</p>
+    <p class="muted">Default view: Hacettepe Geomatics (Harita) Engineering Department.</p>
     <div id="ol-map" class="map" role="region" aria-label="Interactive map"></div>
-    <p id="map-caption" class="muted small">🎓 Hacettepe University — Beytepe Campus</p>
+    <p id="map-caption" class="muted small">🎓 Hacettepe University — Geomatics (Harita) Engineering Department</p>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ===== CONTACT ===== -->
   <section id="contact" class="section card">
     <h2>Contact</h2>
     <ul class="list">
@@ -180,48 +200,78 @@
   <small>© Özgür Esin Güçlü — 2025</small>
 </footer>
 
-<!-- Flying satellite -->
+<!-- ===== FLYING SATELLITE ===== -->
 <div class="fly-sat">
   <img src="assets/satellite.png" alt="">
-  <span class="trail t1"></span>
-  <span class="trail t2"></span>
-  <span class="trail t3"></span>
-  <span class="trail t4"></span>
-  <span class="trail t5"></span>
+  <span class="trail t1"></span><span class="trail t2"></span><span class="trail t3"></span>
+  <span class="trail t4"></span><span class="trail t5"></span>
 </div>
 
+<!-- Back-to-Top Button -->
+<button id="toTop" class="to-top" aria-label="Back to top" title="Back to top"></button>
+
+<!-- OpenLayers JS + fallback -->
 <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
 <script>
   if (!window.ol) {
-    const s = document.createElement('script');
-    s.src = 'https://unpkg.com/ol@latest/dist/ol.js';
+    const s=document.createElement('script');
+    s.src='https://unpkg.com/ol@latest/dist/ol.js';
     document.head.appendChild(s);
   }
 </script>
+
+<!-- Map code -->
 <script src="js/map.js" defer></script>
 
-<!-- Scroll reveal + smooth scroll -->
+<!-- Menu toggle / Two-way reveal (with lilac glow) / Smooth scroll / Back-to-top -->
 <script>
+  // Hamburger click toggle
+  const menu = document.getElementById('menu');
+  const burger = menu.querySelector('.burger');
+  burger.addEventListener('click', (e)=>{
+    e.preventDefault();
+    menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', menu.classList.contains('open'));
+  });
+  menu.querySelectorAll('.menu-panel a').forEach(a=>{
+    a.addEventListener('click', ()=> menu.classList.remove('open'));
+  });
+
+  // Scroll reveal BOTH directions + lilac glow
   (function(){
     const targets = document.querySelectorAll('.about-hero, .about-inner, .card, .about-photo, .section > .card, .cards-2');
     targets.forEach(el => el.classList.add('reveal'));
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
+          // görünür olduğunda class eklenir → fade+glow animasyonu
           e.target.classList.add('visible');
-          io.unobserve(e.target);
+        }else{
+          // görünür alandan çıkınca kaldır → yukarı çıkarken tekrar animasyon
+          e.target.classList.remove('visible');
         }
       });
-    }, {threshold:.1, rootMargin:'0px 0px -10% 0px'});
+    }, {threshold:0.15});
     targets.forEach(el => io.observe(el));
   })();
 
+  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       e.preventDefault();
       document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
     });
   });
+
+  // Back-to-top show/hide + click
+  const toTop = document.getElementById('toTop');
+  const toggleToTop = () => {
+    if (window.scrollY > 500) toTop.classList.add('show');
+    else toTop.classList.remove('show');
+  };
+  window.addEventListener('scroll', toggleToTop, {passive:true});
+  toggleToTop();
+  toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 </script>
 </body>
 </html>

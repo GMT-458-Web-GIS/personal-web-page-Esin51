@@ -1,39 +1,55 @@
-// Initialize OpenLayers after script loads
+// Hacettepe Geomatics (Harita) Mühendisliği — bina odağı + tıklamayla taşınabilir pin
 (function initOL(){
   if (!window.ol) return setTimeout(initOL, 150);
   const mapDiv = document.getElementById('ol-map');
   if (!mapDiv) return;
 
-  // Hacettepe Beytepe Campus (approx.)
-  const lon = 32.7486;
-  const lat = 39.8717;
-  const center = ol.proj.fromLonLat([lon, lat]);
+  // Yaklaşık koordinat (binaya yakın)
+  const deptLonLat = [32.7469, 39.8709]; // [lon, lat]
+  const deptCenter = ol.proj.fromLonLat(deptLonLat);
 
-  // Marker feature (red pin-like circle with white stroke)
-  const marker = new ol.Feature({
-    geometry: new ol.geom.Point(center),
-    name: "Hacettepe University — Beytepe Campus"
-  });
-  marker.setStyle(new ol.style.Style({
+  // Pin + etiket
+  const pinStyle = new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 7,
-      fill: new ol.style.Fill({ color: '#e53935' }), // red
+      radius: 8,
+      fill: new ol.style.Fill({ color: '#7b6dff' }),
       stroke: new ol.style.Stroke({ color: '#ffffff', width: 2 })
+    }),
+    text: new ol.style.Text({
+      text: 'Geomatics Eng. Dept.',
+      font: '600 12px Poppins, sans-serif',
+      offsetY: -16,
+      fill: new ol.style.Fill({ color: '#1b1740' }),
+      stroke: new ol.style.Stroke({ color: '#ffffff', width: 3 })
     })
-  }));
+  });
+
+  const marker = new ol.Feature({
+    geometry: new ol.geom.Point(deptCenter),
+    name: 'Hacettepe – Geomatics Eng. Dept.'
+  });
+  marker.setStyle(pinStyle);
+
+  const vectorLayer = new ol.layer.Vector({
+    source: new ol.source.Vector({ features: [marker] })
+  });
 
   const map = new ol.Map({
     target: 'ol-map',
     layers: [
       new ol.layer.Tile({ source: new ol.source.OSM() }),
-      new ol.layer.Vector({ source: new ol.source.Vector({ features: [marker] }) })
+      vectorLayer
     ],
-    view: new ol.View({ center, zoom: 15 })
+    view: new ol.View({
+      center: deptCenter,
+      zoom: 17
+    })
   });
 
-  // Click: show coords
-  map.on('click', (evt) => {
-    const [LON, LAT] = ol.proj.toLonLat(evt.coordinate);
-    console.log(`Lon: ${LON.toFixed(5)}  Lat: ${LAT.toFixed(5)}`);
+  // Tek tıkla pini taşı → istediğin pik noktayı yakalayabilirsin
+  map.on('singleclick', (evt) => {
+    marker.getGeometry().setCoordinates(evt.coordinate);
+    const [lon, lat] = ol.proj.toLonLat(evt.coordinate);
+    console.log(`Marker moved to Lon: ${lon.toFixed(6)}  Lat: ${lat.toFixed(6)}`);
   });
 })();
