@@ -1,4 +1,4 @@
-/* Esin — White→Lilac ombre, Poppins, 'ESİN' accent, flying satellite, OL map fixed */
+/* Esin — white→lilac ombre, Poppins, ESİN accent, flying satellite, scroll reveal */
 
 :root{
     --card-bg:#ffffffcc;
@@ -6,26 +6,24 @@
     --text:#171530;
     --muted:#58528f;
   
-    --accent:#7b6dff;   /* ESİN color */
+    --accent:#7b6dff;     /* ESİN rengi */
     --accent2:#b7adff;
   
     --maxw:1100px;
     --radius:18px;
   }
   
-  /* ===== Base ===== */
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
   body{
     font-family:Poppins, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
     color:var(--text);
-    /* Top white → bottom lilac */
     background: linear-gradient(180deg,#ffffff 0%,#f7f2ff 55%,#efe6ff 100%);
     line-height:1.6;
-    overflow-x: hidden; /* no horizontal scroll during satellite pass */
+    overflow-x:hidden;
   }
   
-  /* Header & Nav (brand removed) */
+  /* Header & Nav */
   .site-header{
     position:sticky; top:0; z-index:50;
     background:rgba(255,255,255,.65);
@@ -50,7 +48,7 @@
   h2{font-family:"Playfair Display", serif;font-size:2rem;color:#1b1740}
   h3{font-weight:800;color:#221c4d}
   
-  /* ===== About (magazine layout) ===== */
+  /* About */
   .about-hero{padding:4rem 1rem;position:relative}
   .about-inner{
     max-width:var(--maxw);margin:0 auto;
@@ -63,7 +61,7 @@
   }
   .big-name span{color:var(--accent)}
   .sub{font-weight:600;color:#4c4688}
-  .bio{max-width:48ch;color:#524b95}
+  .bio{max-width:60ch;color:#524b95}
   .badges{display:flex;gap:.5rem;flex-wrap:wrap}
   .badges span{background:#fff;border:1px solid var(--card-border);padding:.35rem .6rem;border-radius:999px;font-size:.9rem;color:var(--accent)}
   .about-photo{border-radius:16px;overflow:hidden;box-shadow:0 10px 36px rgba(38,20,100,.18)}
@@ -74,11 +72,11 @@
   .list{margin:.25rem 0 .25rem 1.1rem;color:#433e83}
   .list li{margin:.25rem 0}
   
-  /* Map (make sure visible) */
+  /* Map */
   .map{
     width:100%;
-    height:460px;              /* force height */
-    background:#faf8ff;        /* visible backdrop while loading tiles */
+    height:460px;
+    background:#faf8ff;
     border:1px solid var(--card-border);
     border-radius:12px;
     overflow:hidden;
@@ -89,43 +87,69 @@
   /* Footer */
   .site-footer{max-width:var(--maxw);margin:3rem auto 2rem;padding:0 1rem;color:#6e67a5;text-align:center}
   
-  /* ===== Flying Satellite (bottom-left → top-right → back) ===== */
+  /* ===== Flying Satellite — full right pass + lilac trail ===== */
   .fly-sat{
-    position: fixed;           /* fly across the whole viewport */
-    left: -120px;              /* start offscreen left */
-    bottom: -120px;            /* start offscreen bottom */
+    position: fixed;
+    left: -120px;
+    bottom: -120px;
     width: 120px; height: 120px;
     pointer-events: none;
-    z-index: 0;                /* behind header; feels “in the air” */
-    animation: satPath 12s linear infinite;
+    z-index: 5;
+    animation: satPath 14s linear infinite;
   }
   .fly-sat img{
     width: 100%; height: 100%; object-fit: contain;
-    filter: drop-shadow(0 10px 16px rgba(90,70,255,.25));
+    filter: drop-shadow(0 10px 16px rgba(122,102,255,.25));
   }
   
-  /* sparkle trail */
+  /* Lilac trail */
   .trail{
-    position:absolute; width:10px; height:10px; border-radius:50%;
-    background: radial-gradient(circle,#fff 0%,#d8d1ff 60%,transparent 70%);
+    position:absolute;
+    left: 52%; bottom: 48%;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: radial-gradient(circle,#ffffff 0%,#cabdff 45%,#b59bff 70%,rgba(181,155,255,0) 72%);
     filter: blur(.6px);
-    opacity:0; animation: trailFade 1.6s linear infinite;
+    opacity: 0;
+    animation: trailSpark 1.2s linear infinite;
   }
-  @keyframes trailFade{0%{opacity:0}20%{opacity:.9}90%{opacity:.1;transform:scale(.7)}100%{opacity:0}}
-  /* staggered positions around the satellite */
-  .t1{left:10%; bottom:12%; animation-delay:.1s}
-  .t2{left:25%; bottom:20%; animation-delay:.3s}
-  .t3{left:40%; bottom:28%; animation-delay:.5s}
-  .t4{left:55%; bottom:36%; animation-delay:.7s}
-  .t5{left:70%; bottom:44%; animation-delay:.9s}
+  .t1{ animation-delay: .00s; transform: translate(  0px,  0px); }
+  .t2{ animation-delay: .18s; transform: translate(-10px,  8px); }
+  .t3{ animation-delay: .36s; transform: translate(-20px, 16px); }
+  .t4{ animation-delay: .54s; transform: translate(-30px, 24px); }
+  .t5{ animation-delay: .72s; transform: translate(-40px, 32px); }
   
-  /* motion path: go up-right, fade/blur at middle (as if behind), then reset */
+  @keyframes trailSpark{
+    0%   { opacity:.95; transform: translate(0,0) scale(1); }
+    70%  { opacity:.25; transform: translate(-50px,35px) scale(.75); }
+    100% { opacity:0;   transform: translate(-70px,45px) scale(.6); }
+  }
+  
+  /* flight path: full right then reset */
   @keyframes satPath{
-    0%   { transform: translate(0,0) rotate(15deg); opacity:1; filter: none; }
-    40%  { transform: translate(55vw,-55vh) rotate(15deg); opacity:.55; filter: blur(1.5px) brightness(.9); }
-    49%  { transform: translate(60vw,-60vh) rotate(15deg); opacity:.0; }   /* vanish */
-    50%  { transform: translate(-10vw,10vh) rotate(15deg); opacity:.0; }   /* jump back offscreen */
-    60%  { transform: translate(0,0) rotate(15deg); opacity:.9; filter:none; }
-    100% { transform: translate(55vw,-55vh) rotate(15deg); opacity:.55; filter: blur(1.5px) brightness(.9); }
+    0%   { transform: translate(0,0) rotate(15deg);                 filter:none;     opacity:1; }
+    48%  { transform: translate(100vw,-72vh) rotate(15deg);         filter:blur(1.2px); opacity:.85; }
+    50%  { transform: translate(calc(100vw + 240px), -75vh);        opacity:0; }
+    51%  { transform: translate(-10vw, 10vh);                       opacity:0; }
+    60%  { transform: translate(0,0) rotate(15deg);                 filter:none;     opacity:.95; }
+    100% { transform: translate(100vw,-72vh) rotate(15deg);         filter:blur(1.2px); opacity:.85; }
+  }
+  
+  /* ===== Scroll Reveal (soft fade+slide) ===== */
+  .reveal{
+    opacity:0;
+    transform: translateY(26px) scale(.98);
+    transition: opacity .7s ease, transform .7s ease;
+    will-change: opacity, transform;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform: none;
+  }
+  
+  /* Reduce motion */
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none}
+    .fly-sat{animation:none}
+    .trail{animation:none; opacity:0}
   }
   

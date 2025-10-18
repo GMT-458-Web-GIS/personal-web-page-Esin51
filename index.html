@@ -7,17 +7,18 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- OpenLayers CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol/ol.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
 </head>
 <body>
 
-<!-- Top Nav (brand removed) -->
 <header class="site-header">
   <div class="nav-wrap">
     <nav class="nav">
@@ -25,7 +26,11 @@
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#languages">Languages</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#computerskills">Computer</a>
       <a href="#certificates">Certificates</a>
+      <a href="#hobbies">Hobbies</a>
       <a href="#map">Map</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -34,15 +39,17 @@
 
 <main>
 
-  <!-- ABOUT (magazine style) -->
+  <!-- ABOUT -->
   <section id="about" class="about-hero">
     <div class="about-inner">
       <div class="about-text">
         <h1 class="big-name">ÖZGÜR <span>ESİN</span> GÜÇLÜ</h1>
         <h2 class="sub">Geomatics Engineering Student</h2>
         <p class="bio">
-          I focus on spatial data, cartography, and software. I enjoy building
-          visual and analytical solutions in GIS, remote sensing, and Python.
+          I am Özgür Esin Güçlü, a senior year undergraduate student in Geomatics Engineering at
+          Hacettepe University. By working at YDA Group and attending various seminars, I have
+          gained valuable experiences and enhanced my skills. I aim to develop myself further
+          in GIS and software within a dynamic and innovative environment.
         </p>
         <div class="badges">
           <span>GIS</span><span>Python</span><span>QGIS</span><span>AutoCAD</span><span>Survey</span>
@@ -69,11 +76,11 @@
     <ul class="list">
       <li>
         <strong>Başarsoft — GIS Intern (Summer 2025)</strong><br>
-        Contributed to GIS workflows, data preparation and QA; practiced cartographic design.
+        Contributed to GIS data workflows, visualization and QA; practiced cartographic design.
       </li>
       <li>
         <strong>YDA Group, Ankara — Surveying Intern (Summer 2024)</strong><br>
-        Land surveying with total stations, levels and lasers; mapping & analysis using NetCad and AutoCAD.
+        Field surveying with total stations/levels; mapping & analysis using NetCad and AutoCAD.
       </li>
     </ul>
   </section>
@@ -84,7 +91,7 @@
       <h3>Technical</h3>
       <ul class="list">
         <li>QGIS, NetCad, AutoCAD, Agisoft</li>
-        <li>Python (intermediate), Excel (advanced)</li>
+        <li>Python (Intermediate), Excel (Advanced)</li>
       </ul>
     </article>
     <article class="card">
@@ -96,26 +103,69 @@
     </article>
   </section>
 
-  <!-- CERTIFICATES -->
-  <section id="certificates" class="section card">
-    <h2>Certificates & Seminars</h2>
+  <!-- LANGUAGES -->
+  <section id="languages" class="section card">
+    <h2>Languages</h2>
     <ul class="list">
-      <li>AutoCAD: From Zero to Expertise (2024)</li>
-      <li>AI & Remote Sensing for Disaster Risk Management (2023)</li>
-      <li>Novel Quantum Sensors for Gravimetric Earth Observation (2023)</li>
-      <li>QGIS Computer Course (2022)</li>
+      <li><strong>Turkish:</strong> Native</li>
+      <li><strong>English:</strong> B2</li>
     </ul>
   </section>
 
-  <!-- MAP (OpenLayers requirement) -->
+  <!-- HIGHLIGHTS -->
+  <section id="highlights" class="section card">
+    <h2>Skill Highlights</h2>
+    <ul class="list">
+      <li>Creativity</li>
+      <li>Teamwork</li>
+      <li>Adaptability</li>
+      <li>Problem solving</li>
+      <li>Future focused</li>
+      <li>Time management</li>
+    </ul>
+  </section>
+
+  <!-- COMPUTER SKILLS -->
+  <section id="computerskills" class="section card">
+    <h2>Computer Skills</h2>
+    <ul class="list">
+      <li>Python – Intermediate</li>
+      <li>Java – Beginner</li>
+      <li>Visual Studio – Beginner</li>
+      <li>QGIS – Intermediate</li>
+      <li>NetCad – Beginner</li>
+      <li>Microsoft Office – Intermediate</li>
+      <li>AutoCAD – Beginner</li>
+      <li>Agisoft – Intermediate</li>
+      <li>MS Excel – Intermediate</li>
+      <li>MicroStation – Beginner</li>
+    </ul>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates" class="section card">
+    <h2>Seminars & Certificates</h2>
+    <ul class="list">
+      <li><strong>06.03.2024:</strong> ‘AutoCAD: From Zero to Expertise Training Set’</li>
+      <li><strong>23.05.2023:</strong> AI & Remote Sensing for Disaster Risk Management (Ankara)</li>
+      <li><strong>06.04.2023:</strong> Benefit of Novel Quantum Sensors for Gravimetric Earth Observation (Ankara)</li>
+      <li><strong>19.12.2022:</strong> QGIS Computer Course & ‘MS Excel | Learn Advanced Excel from Beginning’</li>
+      <li><strong>01.03.2025:</strong> HKMO Transportation Projects Training</li>
+    </ul>
+  </section>
+
+  <!-- HOBBIES -->
+  <section id="hobbies" class="section card">
+    <h2>Hobbies</h2>
+    <p>Equestrian, painting, astrology and swimming.</p>
+  </section>
+
+  <!-- MAP -->
   <section id="map" class="section card">
     <h2>Interactive Map</h2>
-    <p class="muted">Default view: Ankara. Click on the map to see coordinates in the console.</p>
-    <!-- id="ol-map" MUST match JS target -->
+    <p class="muted">Default view: Hacettepe University, Beytepe Campus. Click to see coordinates in console.</p>
     <div id="ol-map" class="map" role="region" aria-label="Interactive map"></div>
-    <p class="muted small">
-      OL example ref: <a href="https://banbar.github.io/my-first-wp/" target="_blank" rel="noopener">sample</a>.
-    </p>
+    <p id="map-caption" class="muted small">🎓 Hacettepe University — Beytepe Campus</p>
   </section>
 
   <!-- CONTACT -->
@@ -123,8 +173,12 @@
     <h2>Contact</h2>
     <ul class="list">
       <li><strong>Phone:</strong> +90 530 068 1157</li>
-      <li><strong>Email:</strong> <em>add your email</em></li>
-      <li><strong>LinkedIn:</strong> <em>add profile URL</em></li>
+      <li><strong>Email:</strong> <a href="mailto:esinnguclu@hotmail.com">esinnguclu@hotmail.com</a></li>
+      <li><strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/%C3%B6zg%C3%BCr-esin-g%C3%BC%C3%A7l%C3%BC-795309209/" target="_blank" rel="noopener">
+          linkedin.com/in/özgür-esin-güçlü-795309209
+        </a>
+      </li>
       <li><strong>Location:</strong> Ankara, Türkiye</li>
     </ul>
   </section>
@@ -135,7 +189,7 @@
   <small>© Özgür Esin Güçlü — 2025</small>
 </footer>
 
-<!-- FLYING SATELLITE -->
+<!-- Flying satellite (image must exist at assets/satellite.png) -->
 <div class="fly-sat">
   <img src="assets/satellite.png" alt="">
   <span class="trail t1"></span>
@@ -145,11 +199,9 @@
   <span class="trail t5"></span>
 </div>
 
-<!-- OpenLayers CSS/JS + FALLBACK -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
+<!-- OpenLayers JS + fallback -->
 <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
 <script>
-  // Fallback: jsDelivr erişmezse unpkg'den getir
   if (!window.ol) {
     const s = document.createElement('script');
     s.src = 'https://unpkg.com/ol@latest/dist/ol.js';
@@ -157,11 +209,27 @@
   }
 </script>
 
-<!-- Map code (defer) -->
+<!-- Map code -->
 <script src="js/map.js" defer></script>
 
-<!-- Smooth scroll -->
+<!-- Scroll reveal (fade+slide) + smooth scroll -->
 <script>
+  (function(){
+    const targets = document.querySelectorAll(
+      '.about-hero, .about-inner, .card, .cards-2, .about-photo'
+    );
+    targets.forEach(el => el.classList.add('reveal'));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: .1, rootMargin: '0px 0px -10% 0px'});
+    targets.forEach(el => io.observe(el));
+  })();
+
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
       e.preventDefault();
