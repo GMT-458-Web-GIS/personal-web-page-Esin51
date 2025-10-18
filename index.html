@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Özgür Esin Güçlü — Kişisel Web Sayfası</title>
+  <title>Özgür Esin Güçlü — Personal Website</title>
 
-  <!-- Fontlar -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Stil -->
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- OpenLayers -->
@@ -17,7 +17,6 @@
 </head>
 <body>
 
-<!-- Üst Menü -->
 <header class="site-header">
   <div class="nav-wrap">
     <div class="brand">ÖZGÜR ESİN GÜÇLÜ</div>
@@ -27,7 +26,7 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#certificates">Certificates</a>
-      <a href="#projects">Projects</a>
+      <a href="#map">Map</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -35,22 +34,22 @@
 
 <main>
 
-  <!-- ABOUT (dergi kapağı stili, foto sağda) -->
+  <!-- ABOUT (magazine cover style) -->
   <section id="about" class="about-hero">
     <div class="about-inner">
       <div class="about-text">
         <h1 class="big-name">ÖZGÜR <span>ESİN</span> GÜÇLÜ</h1>
-        <h2 class="sub">Geomatik Mühendisliği Öğrencisi</h2>
+        <h2 class="sub">Geomatics Engineering Student</h2>
         <p class="bio">
-          Mekânsal veri, harita ve yazılımla ilgileniyorum. CBS, uzaktan algılama ve Python ile
-          gerçek dünyadaki problemler için görsel ve analitik çözümler üretmeyi seviyorum.
+          I focus on spatial data, cartography and software. I enjoy building
+          visual and analytical solutions in GIS, remote sensing and Python.
         </p>
         <div class="badges">
           <span>GIS</span><span>Python</span><span>QGIS</span><span>AutoCAD</span><span>Survey</span>
         </div>
       </div>
 
-      <!-- Fotoğraf: assets/mezuniyet.jpg -->
+      <!-- Photo -->
       <figure class="about-photo">
         <img src="assets/mezuniyet.jpg" alt="Özgür Esin Güçlü">
       </figure>
@@ -61,7 +60,7 @@
   <section id="education" class="section card">
     <h2>Education</h2>
     <ul class="list">
-      <li><strong>Hacettepe Üniversitesi — Geomatik Mühendisliği</strong> · 2020–Güncel</li>
+      <li><strong>Hacettepe University — Geomatics Engineering</strong> · 2020–Present.</li>
     </ul>
   </section>
 
@@ -69,24 +68,31 @@
   <section id="experience" class="section card">
     <h2>Experience</h2>
     <ul class="list">
-      <li><strong>YDA Group (Ankara) — Stajyer</strong> · 07/2024  
-        Arazi ölçmeleri (total station, nivo, lazer); NetCad & AutoCAD ile haritalama/analiz.
+      <li>
+        <strong>Başarsoft — GIS Intern (Summer 2025)</strong><br>
+        Contributing to GIS workflows and data preparation; practicing cartographic design and QA.
+      </li>
+      <li>
+        <strong>YDA Group, Ankara — Surveying Intern (Jul 2024)</strong><br>
+        Land surveying with total stations, levels and lasers; mapping & analysis using NetCad and AutoCAD.
       </li>
     </ul>
   </section>
 
   <!-- SKILLS -->
   <section id="skills" class="section cards-2">
-    <article class="card"><h3>Technical</h3>
+    <article class="card">
+      <h3>Technical</h3>
       <ul class="list">
         <li>QGIS, NetCad, AutoCAD, Agisoft</li>
-        <li>Python (orta), Excel (ileri)</li>
+        <li>Python (intermediate), Excel (advanced)</li>
       </ul>
     </article>
-    <article class="card"><h3>Soft Skills</h3>
+    <article class="card">
+      <h3>Soft Skills</h3>
       <ul class="list">
-        <li>Takım çalışması, problem çözme</li>
-        <li>Zaman yönetimi, iletişim</li>
+        <li>Teamwork, problem solving</li>
+        <li>Time management, communication</li>
       </ul>
     </article>
   </section>
@@ -95,43 +101,32 @@
   <section id="certificates" class="section card">
     <h2>Certificates & Seminars</h2>
     <ul class="list">
-      <li>AutoCAD: Sıfırdan Uzmanlığa (2024)</li>
-      <li>Yapay Zekâ & Uzaktan Algılama ile Afet Risk Yönetimi (2023)</li>
-      <li>Gravimetrik Yer Gözlemleri için Yeni Kuantum Sensörleri (2023)</li>
-      <li>QGIS Bilgisayar Kursu (2022)</li>
+      <li>AutoCAD: From Zero to Expertise (2024)</li>
+      <li>AI & Remote Sensing for Disaster Risk Management (2023)</li>
+      <li>Novel Quantum Sensors for Gravimetric Earth Observation (2023)</li>
+      <li>QGIS Computer Course (2022)</li>
     </ul>
   </section>
 
-  <!-- PROJECTS + MAP (tablolu bilgi + görselli + OL şartı) -->
-  <section id="projects" class="section card">
-    <h2>Projects</h2>
-    <table class="proj-table">
-      <thead><tr><th>Görsel</th><th>Proje</th><th>Açıklama</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Map_marker.svg" alt="Map pin"></td>
-          <td>Mahalle Haritası</td>
-          <td>OpenLayers ile temel zemin + vektör katmanları.</td>
-        </tr>
-        <tr>
-          <td><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Map_icon.svg" alt="Map icon"></td>
-          <td>Rota Planlayıcı</td>
-          <td>Marker & popup ile etkileşimli rota örneği.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="map-wrap">
-      <h3>Interactive Map</h3>
-      <div id="map" class="map" role="region" aria-label="Etkileşimli harita"></div>
-    </div>
+  <!-- MAP (OpenLayers requirement) -->
+  <section id="map" class="section card">
+    <h2>Interactive Map</h2>
+    <p class="muted">Default view: Ankara. Click on the map to see coordinates in the console.</p>
+    <div id="ol-map" class="map" role="region" aria-label="Interactive map"></div>
+    <p class="muted small">
+      OL example ref: <a href="https://banbar.github.io/my-first-wp/" target="_blank" rel="noopener">sample</a>.
+    </p>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT (phone from CV; fill email/LinkedIn) -->
   <section id="contact" class="section card">
     <h2>Contact</h2>
-    <p>E-posta: <em>kendiniekle@ornek.com</em> · LinkedIn: <em>profil linkin</em></p>
-    <p><a class="btn" href="OzgurEsinGuclu_CV.pdf" download>CV’yi indir (PDF)</a></p>
+    <ul class="list">
+      <li><strong>Phone:</strong> +90 530 068 1157</li>
+      <li><strong>Email:</strong> <em>add your correct email here</em></li>
+      <li><strong>LinkedIn:</strong> <em>add profile URL</em></li>
+      <li><strong>Location:</strong> Ankara, Türkiye</li>
+    </ul>
   </section>
 
 </main>
@@ -144,7 +139,7 @@
 <script src="https://cdn.jsdelivr.net/npm/ol/ol.js"></script>
 <script src="js/map.js"></script>
 
-<!-- Yumuşak kaydırma -->
+<!-- Smooth scroll -->
 <script>
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click',e=>{
