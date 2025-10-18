@@ -1,4 +1,4 @@
-/* Esin — white→lilac ombre, Poppins, ESİN accent, flying satellite, scroll reveal */
+/* Esin — white→lilac ombre, Poppins, ESİN accent, white nav text, scroll reveal */
 
 :root{
     --card-bg:#ffffffcc;
@@ -6,7 +6,7 @@
     --text:#171530;
     --muted:#58528f;
   
-    --accent:#7b6dff;     /* ESİN rengi */
+    --accent:#7b6dff;
     --accent2:#b7adff;
   
     --maxw:1100px;
@@ -23,17 +23,28 @@
     overflow-x:hidden;
   }
   
-  /* Header & Nav */
+  /* Header & Nav — white text */
   .site-header{
     position:sticky; top:0; z-index:50;
-    background:rgba(255,255,255,.65);
+    /* hafif lacivert transparan zemin → beyaz yazı okunur */
+    background: rgba(36, 29, 80, .32);
     backdrop-filter: blur(10px) saturate(140%);
-    border-bottom:1px solid var(--card-border);
+    border-bottom:1px solid rgba(230, 222, 255, .5);
   }
   .nav-wrap{max-width:var(--maxw);margin:0 auto;padding:.9rem 1rem}
   .nav{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-  .nav a{color:#443c7a;text-decoration:none;padding:.35rem .6rem;border-radius:999px;border:1px solid transparent}
-  .nav a:hover,[aria-current="page"]{border-color:var(--accent);color:#231d57}
+  .nav a{
+    color:#ffffff;                /* beyaz yazı */
+    text-decoration:none;
+    padding:.35rem .6rem;
+    border-radius:999px;
+    border:1px solid transparent;
+    text-shadow:0 1px 2px rgba(0,0,0,.25);   /* okunurluk */
+  }
+  .nav a:hover,[aria-current="page"]{
+    border-color: rgba(255,255,255,.7);
+    color:#ffffff;
+  }
   
   /* Sections / Cards */
   .section{max-width:var(--maxw);margin:2rem auto;padding:0 1rem}
@@ -70,16 +81,13 @@
   
   /* Lists */
   .list{margin:.25rem 0 .25rem 1.1rem;color:#433e83}
-  .list li{margin:.25rem 0}
+  .list li{margin:.35rem 0}          /* aralık arttırıldı */
+  .list-tight li{margin:.28rem 0}    /* teknik liste biraz daha sık */
   
   /* Map */
   .map{
-    width:100%;
-    height:460px;
-    background:#faf8ff;
-    border:1px solid var(--card-border);
-    border-radius:12px;
-    overflow:hidden;
+    width:100%; height:460px; background:#faf8ff;
+    border:1px solid var(--card-border); border-radius:12px; overflow:hidden;
   }
   .muted{color:#6b63a8}
   .small{font-size:.9rem}
@@ -87,64 +95,44 @@
   /* Footer */
   .site-footer{max-width:var(--maxw);margin:3rem auto 2rem;padding:0 1rem;color:#6e67a5;text-align:center}
   
-  /* ===== Flying Satellite — full right pass + lilac trail ===== */
+  /* ===== Flying Satellite (full-right + lilac trail) ===== */
   .fly-sat{
-    position: fixed;
-    left: -120px;
-    bottom: -120px;
-    width: 120px; height: 120px;
-    pointer-events: none;
-    z-index: 5;
-    animation: satPath 14s linear infinite;
+    position: fixed; left: -120px; bottom: -120px;
+    width: 120px; height: 120px; pointer-events: none;
+    z-index: 5; animation: satPath 14s linear infinite;
   }
-  .fly-sat img{
-    width: 100%; height: 100%; object-fit: contain;
-    filter: drop-shadow(0 10px 16px rgba(122,102,255,.25));
-  }
-  
-  /* Lilac trail */
+  .fly-sat img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 16px rgba(122,102,255,.25))}
   .trail{
-    position:absolute;
-    left: 52%; bottom: 48%;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: radial-gradient(circle,#ffffff 0%,#cabdff 45%,#b59bff 70%,rgba(181,155,255,0) 72%);
-    filter: blur(.6px);
-    opacity: 0;
-    animation: trailSpark 1.2s linear infinite;
+    position:absolute; left:52%; bottom:48%;
+    width:12px; height:12px; border-radius:50%;
+    background: radial-gradient(circle,#fff 0%,#cabdff 45%,#b59bff 70%,rgba(181,155,255,0) 72%);
+    filter: blur(.6px); opacity:0; animation: trailSpark 1.2s linear infinite;
   }
-  .t1{ animation-delay: .00s; transform: translate(  0px,  0px); }
-  .t2{ animation-delay: .18s; transform: translate(-10px,  8px); }
-  .t3{ animation-delay: .36s; transform: translate(-20px, 16px); }
-  .t4{ animation-delay: .54s; transform: translate(-30px, 24px); }
-  .t5{ animation-delay: .72s; transform: translate(-40px, 32px); }
-  
+  .t1{animation-delay:.00s; transform:translate(0,0)}
+  .t2{animation-delay:.18s; transform:translate(-10px,8px)}
+  .t3{animation-delay:.36s; transform:translate(-20px,16px)}
+  .t4{animation-delay:.54s; transform:translate(-30px,24px)}
+  .t5{animation-delay:.72s; transform:translate(-40px,32px)}
   @keyframes trailSpark{
-    0%   { opacity:.95; transform: translate(0,0) scale(1); }
-    70%  { opacity:.25; transform: translate(-50px,35px) scale(.75); }
-    100% { opacity:0;   transform: translate(-70px,45px) scale(.6); }
+    0%{opacity:.95; transform: translate(0,0) scale(1)}
+    70%{opacity:.25; transform: translate(-50px,35px) scale(.75)}
+    100%{opacity:0; transform: translate(-70px,45px) scale(.6)}
   }
-  
-  /* flight path: full right then reset */
   @keyframes satPath{
-    0%   { transform: translate(0,0) rotate(15deg);                 filter:none;     opacity:1; }
-    48%  { transform: translate(100vw,-72vh) rotate(15deg);         filter:blur(1.2px); opacity:.85; }
-    50%  { transform: translate(calc(100vw + 240px), -75vh);        opacity:0; }
-    51%  { transform: translate(-10vw, 10vh);                       opacity:0; }
-    60%  { transform: translate(0,0) rotate(15deg);                 filter:none;     opacity:.95; }
-    100% { transform: translate(100vw,-72vh) rotate(15deg);         filter:blur(1.2px); opacity:.85; }
+    0%{transform:translate(0,0) rotate(15deg); filter:none; opacity:1}
+    48%{transform:translate(100vw,-72vh) rotate(15deg); filter:blur(1.2px); opacity:.85}
+    50%{transform:translate(calc(100vw + 240px), -75vh); opacity:0}
+    51%{transform:translate(-10vw, 10vh); opacity:0}
+    60%{transform:translate(0,0) rotate(15deg); filter:none; opacity:.95}
+    100%{transform:translate(100vw,-72vh) rotate(15deg); filter:blur(1.2px); opacity:.85}
   }
   
   /* ===== Scroll Reveal (soft fade+slide) ===== */
   .reveal{
-    opacity:0;
-    transform: translateY(26px) scale(.98);
-    transition: opacity .7s ease, transform .7s ease;
-    will-change: opacity, transform;
+    opacity:0; transform: translateY(26px) scale(.98);
+    transition: opacity .7s ease, transform .7s ease; will-change: opacity, transform;
   }
-  .reveal.visible{
-    opacity:1;
-    transform: none;
-  }
+  .reveal.visible{opacity:1; transform:none}
   
   /* Reduce motion */
   @media (prefers-reduced-motion: reduce){

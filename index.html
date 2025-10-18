@@ -5,16 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Özgür Esin Güçlü — Personal Website</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/styles.css" />
-
-  <!-- OpenLayers CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
 </head>
 <body>
@@ -46,10 +40,10 @@
         <h1 class="big-name">ÖZGÜR <span>ESİN</span> GÜÇLÜ</h1>
         <h2 class="sub">Geomatics Engineering Student</h2>
         <p class="bio">
-          I am Özgür Esin Güçlü, a senior year undergraduate student in Geomatics Engineering at
-          Hacettepe University. By working at YDA Group and attending various seminars, I have
-          gained valuable experiences and enhanced my skills. I aim to develop myself further
-          in GIS and software within a dynamic and innovative environment.
+          I was born on <strong>19 September 2001</strong> in <strong>Niğde</strong>. I am currently studying
+          <strong>Geomatics Engineering at Hacettepe University</strong>. I focus on improving myself in
+          <strong>GIS</strong>, <strong>cartography</strong> and <strong>software</strong>—building clean maps,
+          working with spatial data and coding practical tools.
         </p>
         <div class="badges">
           <span>GIS</span><span>Python</span><span>QGIS</span><span>AutoCAD</span><span>Survey</span>
@@ -85,20 +79,17 @@
     </ul>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section cards-2">
+  <!-- SKILLS (only Technical; vertical list) -->
+  <section id="skills" class="section">
     <article class="card">
-      <h3>Technical</h3>
-      <ul class="list">
-        <li>QGIS, NetCad, AutoCAD, Agisoft</li>
-        <li>Python (Intermediate), Excel (Advanced)</li>
-      </ul>
-    </article>
-    <article class="card">
-      <h3>Soft Skills</h3>
-      <ul class="list">
-        <li>Teamwork, problem solving</li>
-        <li>Time management, communication</li>
+      <h3>Technical Skills</h3>
+      <ul class="list list-tight">
+        <li>QGIS</li>
+        <li>NetCad</li>
+        <li>AutoCAD</li>
+        <li>Agisoft</li>
+        <li>Python (Intermediate)</li>
+        <li>MS Excel (Advanced)</li>
       </ul>
     </article>
   </section>
@@ -189,7 +180,7 @@
   <small>© Özgür Esin Güçlü — 2025</small>
 </footer>
 
-<!-- Flying satellite (image must exist at assets/satellite.png) -->
+<!-- Flying satellite -->
 <div class="fly-sat">
   <img src="assets/satellite.png" alt="">
   <span class="trail t1"></span>
@@ -199,7 +190,6 @@
   <span class="trail t5"></span>
 </div>
 
-<!-- OpenLayers JS + fallback -->
 <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
 <script>
   if (!window.ol) {
@@ -208,16 +198,12 @@
     document.head.appendChild(s);
   }
 </script>
-
-<!-- Map code -->
 <script src="js/map.js" defer></script>
 
-<!-- Scroll reveal (fade+slide) + smooth scroll -->
+<!-- Scroll reveal + smooth scroll -->
 <script>
   (function(){
-    const targets = document.querySelectorAll(
-      '.about-hero, .about-inner, .card, .cards-2, .about-photo'
-    );
+    const targets = document.querySelectorAll('.about-hero, .about-inner, .card, .about-photo, .section > .card, .cards-2');
     targets.forEach(el => el.classList.add('reveal'));
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
@@ -226,7 +212,7 @@
           io.unobserve(e.target);
         }
       });
-    }, {threshold: .1, rootMargin: '0px 0px -10% 0px'});
+    }, {threshold:.1, rootMargin:'0px 0px -10% 0px'});
     targets.forEach(el => io.observe(el));
   })();
 
