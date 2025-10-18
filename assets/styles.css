@@ -1,0 +1,161 @@
+/* ================================
+   ÖZGÜR ESİN GÜÇLÜ — PORTFÖY TEMA
+   ŞIK, KARANLIK VE MODERN TASARIM
+   ================================ */
+
+/* Temel renkler ve değişkenler */
+:root {
+    --bg: #0a0f1a;
+    --bg-card: #131a2a;
+    --text: #e8ecf4;
+    --text-dim: #a3adc2;
+    --accent: #5b8cff;
+    --accent2: #00e6ff;
+    --border: #1f2937;
+    --radius: 14px;
+    --maxw: 1100px;
+    --shadow: 0 10px 25px rgba(0,0,0,0.35);
+  }
+  
+  /* Genel yapı */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(160deg, #0b1220 0%, #0f172a 100%);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  
+  /* Header ve menü */
+  header {
+    background: rgba(19, 26, 42, 0.8);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  
+  nav {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 1rem 1.2rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover,
+  nav a[aria-current="page"] {
+    color: var(--accent);
+  }
+  
+  /* Ana içerik */
+  main {
+    max-width: var(--maxw);
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Başlık */
+  h1, h2, h3 {
+    color: var(--text);
+    margin-top: 0;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Hero bölümü */
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero p {
+    color: var(--text-dim);
+    max-width: 650px;
+    margin: 0.75rem auto;
+  }
+  
+  /* Rozetler */
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .badge {
+    background: var(--bg-card);
+    color: var(--accent2);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+  
+  .badge:hover {
+    background: rgba(91,140,255,0.1);
+  }
+  
+  /* Kart düzeni */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.4rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+  }
+  
+  /* Harita */
+  .map {
+    width: 100%;
+    height: 420px;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  
+  /* Düğmeler */
+  .btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    color: #fff;
+    text-decoration: none;
+    padding: 0
+
+    
