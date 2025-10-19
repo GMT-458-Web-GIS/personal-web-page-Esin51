@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Styles (cache-bust) -->
+  <link rel="stylesheet" href="assets/styles.css?v=20251019-1" />
 
   <!-- OpenLayers CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
@@ -38,7 +38,7 @@
         <a href="#map"          role="menuitem">Map</a>
         <a href="#contact"      role="menuitem">Contact</a>
 
-        <!-- sparkle particles (panel açılırken parıltılar) -->
+        <!-- sparkle particles -->
         <div class="sparkles" aria-hidden="true">
           <span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span>
           <span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span>
@@ -208,20 +208,15 @@
 <!-- Back-to-Top Button -->
 <button id="toTop" class="to-top" aria-label="Back to top" title="Back to top"></button>
 
-<!-- OpenLayers JS + fallback -->
+<!-- ========== SCRIPTS (tek sefer) ========== -->
+
+<!-- OpenLayers -->
 <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
-<script>
-  if (!window.ol) {
-    const s=document.createElement('script');
-    s.src='https://unpkg.com/ol@latest/dist/ol.js';
-    document.head.appendChild(s);
-  }
-</script>
 
-<!-- Map code -->
-<script src="js/map.js" defer></script>
+<!-- Map code (cache-bust) -->
+<script src="js/map.js?v=20251019-1" defer></script>
 
-<!-- Menu toggle / Two-way reveal (with lilac glow) / Smooth scroll / Back-to-top -->
+<!-- Menu toggle / Reveal / Smooth scroll / Back-to-top -->
 <script>
   // Hamburger click toggle
   const menu = document.getElementById('menu');
@@ -242,10 +237,8 @@
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
-          // görünür olduğunda class eklenir → fade+glow animasyonu
           e.target.classList.add('visible');
         }else{
-          // görünür alandan çıkınca kaldır → yukarı çıkarken tekrar animasyon
           e.target.classList.remove('visible');
         }
       });
@@ -271,67 +264,5 @@
   toggleToTop();
   toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 </script>
-</body>
-</html>
-
-<!-- OpenLayers -->
-<script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
-
-<!-- Map code (cache-bust) -->
-<script src="js/map.js?v=5" defer></script>
-
-<!doctype html>
-<html lang="tr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dark Mode Butonlu Örnek</title>
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <!-- Stil -->
-  <link rel="stylesheet" href="assets/styles.css" />
-</head>
-<body>
-
-  <!-- ÜST BAR -->
-  <header class="topbar">
-    <div class="container">
-      <div class="brand">Özgür <span>Esin</span> Güçlü</div>
-
-      <!-- Dark Mode Butonu -->
-      <button id="themeToggle" class="theme-toggle" aria-label="Tema değiştir" aria-pressed="false">
-        <!-- İkonlar (SVG) -->
-        <svg class="icon sun" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 4V2M12 22v-2M4.93 4.93L3.51 3.51M20.49 20.49l-1.42-1.42M4 12H2m20 0h-2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42M12 8a4 4 0 1 1 0 8a4 4 0 0 1 0-8z" fill="currentColor"/>
-        </svg>
-        <svg class="icon moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3c.2 0 .4.01.59.03A7 7 0 1 0 21 12.79z" fill="currentColor"/>
-        </svg>
-        <span class="label">Tema</span>
-      </button>
-    </div>
-  </header>
-
-  <!-- İÇERİK -->
-  <main class="container">
-    <section class="card">
-      <h1>Merhaba 👋</h1>
-      <p>Bu sayfada sağ üstteki <strong>butonla</strong> aydınlık / karanlık tema arasında geçiş yapabilirsin. Seçimin tarayıcıda <em>kalıcı</em> tutulur.</p>
-    </section>
-
-    <section class="card">
-      <h2>Örnek Kart</h2>
-      <p>Arka plan, metin ve kart renkleri tema değişimine duyarlı.</p>
-      <a class="btn" href="#">Buton örneği</a>
-    </section>
-  </main>
-
-  <footer class="container footer">
-    <small>© 2025 — Özgür Esin Güçlü</small>
-  </footer>
-
-  <!-- Tema JS -->
-  <script src="js/theme.js" defer></script>
 </body>
 </html>
