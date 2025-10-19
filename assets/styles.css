@@ -246,3 +246,15 @@
 .menu{ margin-left:0 !important; }
 .burger{ margin-right:0 !important; }
 .menu-panel{ right:0 !important; }       /* panel sağdan açılsın */
+
+.satellite {
+  position: fixed;
+  bottom: 5vh;
+  left: 5vw;
+  width: 60px;
+  height: 60px;
+  background: url('../assets/satellite.png') no-repeat center/contain;
+  pointer-events: none;
+  z-index: 50;
+  transition: transform 0.2s linear;
+}
