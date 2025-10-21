@@ -80,8 +80,5 @@ Through this project, I learned:
 - How to use **GitHub Pages** for publishing  
 - The importance of animation timing and design consistency  
 
+
 https://gmt-458-web-gis.github.io/personal-web-page-Esin51/
-
-How to use GitHub Pages for publishing
-
-The importance of animation timing and visual hierarchy in UI design
