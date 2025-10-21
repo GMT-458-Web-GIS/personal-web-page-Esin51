@@ -81,4 +81,4 @@ Through this project, I learned:
 - The importance of animation timing and design consistency  
 
 
-https://gmt-458-web-gis.github.io/personal-web-page-Esin51/
+my web site : https://gmt-458-web-gis.github.io/personal-web-page-Esin51/
