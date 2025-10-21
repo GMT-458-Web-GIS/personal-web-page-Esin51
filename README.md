@@ -80,7 +80,7 @@ Through this project, I learned:
 - How to use **GitHub Pages** for publishing  
 - The importance of animation timing and design consistency  
 
-How to integrate OpenLayers for custom mapping
+https://gmt-458-web-gis.github.io/personal-web-page-Esin51/
 
 How to use GitHub Pages for publishing
 
